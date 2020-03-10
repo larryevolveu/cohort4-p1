@@ -1,0 +1,30 @@
+{
+    "//": [
+        "",
+        " if you have a handle bar issue you may need to run this command       ",
+        " ?rm -rf node_modules && rm -rf package-lock.json && npm i && npm test ",
+        ""
+    ],
+    "name": "jest-p2",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest",
+        "testcov": "jest --coverage",
+        "test1": "jest 01-getting-started",
+        "test1cov": "jest 01-getting-started --coverage",
+        "testfile": "jest src/01-getting-started/scripts/lfsplay.test.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/cli": "^7.0.0",
+        "@babel/preset-env": "^7.0.0",
+        "handlebars": "^4.7.3",
+        "jest": "^24.9.0",
+        "node-fetch": "^2.6.0",
+        "whatwg-fetch": "^3.0.0"
+    }
+}
