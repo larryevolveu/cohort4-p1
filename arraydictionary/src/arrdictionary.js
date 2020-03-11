@@ -7,7 +7,7 @@ const functions = {
     },
 
     arrayAdd(arr, num) {
-        arr.push(num);
+        arr.push(Number(num));
         return arr;
     },
 

@@ -8,6 +8,11 @@ test('Does the array add functions work?', () => {
     const arr2 = arrdictionary.arrayAdd([3,4,5],7);
     expect(arr2.length).toBe(4);
     expect(arr2[3]).toBe(7);
+
+    // Making sure strings can't be added to array.
+    const arr3 = arrdictionary.arrayAdd([],"7");
+    expect(arr3.length).toBe(1);
+    expect(arr3[0]).toBe(7);
 });
 
 test('Does the array sum functions work?', () => {

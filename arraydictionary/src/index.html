@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            border: 2px;
+        }
+        
+        div {
+            width: 90%;
+            height: 90%;
+            border: 2px;
+            border-style: dashed;
+            padding: 20px;
+        }
+        
+        input {
+            text-align: center;
+        }
+        
+        #codeInput {
+            width: 60%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="ArrayDict">
+
+        <h1>Fun With Arrays</h1>
+        <input placeholder="Add Number Here" id="idArrayInput">
+        <button id="idArrayAdd">Add</button>
+        <button id="idArrayTotal">Total</button>
+
+        <hr>
+
+        <h1>Fun With Dictionaries</h1>
+        <p>Add to Country Dictionary:</p>
+        <input id="idCountryInput" placeholder="Country Code">
+        <input id="idCapitalInput" placeholder="Capital City">
+        <button id="idDictEntry">Submit</button>
+        <br>
+        <p>Lookup Capitial:</p>
+        <input id="idCodeInput" placeholder="Enter Country Code (Eg. CA, DE, FR, etc.)">
+        <button id="idCodeLookup">Lookup</button>
+
+        <br>
+    </div>
+    <script src="index.js" type="module"> </script>
+</body>
+
+</html>
