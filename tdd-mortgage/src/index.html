@@ -1,0 +1,71 @@
+<head>
+    <title>JavaScript Loan Calculator</title>
+</head>
+
+<body bgcolor="white">
+    <!-- 
+
+  Inspiration and much code have copied from:
+            https://www.oreilly.com/library/view/javascript-the-definitive/0596000480/ch01s08.html
+
+  This is an HTML form that allows the user to enter data and allows
+  JavaScript to display the results it computes back to the user. The
+  form elements are embedded in a table to improve their appearance.
+  The form itself is given the name "loandata", and the fields within
+  the form are given names such as "interest" and "years". These
+  field names are used in the JavaScript code that follows the form.
+  Note that some of the form elements define "onchange" or "onclick"
+  event handlers. These specify strings of JavaScript code to be
+  executed when the user enters data or clicks on a button. 
+-->
+    <form name="loandata">
+        <table>
+            <tr>
+                <td colspan="3"><b>Enter Loan Information:</b></td>
+            </tr>
+            <tr>
+                <td>1)</td>
+                <td>Amount of the loan (any currency):</td>
+                <td><input type="text" name="principal" size="12"></td>
+            </tr>
+            <tr>
+                <td>2)</td>
+                <td>Annual percentage rate of interest:</td>
+                <td><input type="text" name="interest" size="12"></td>
+            </tr>
+            <tr>
+                <td>3)</td>
+                <td>Repayment period in years:</td>
+                <td><input type="text" name="years" size="12"></td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <input type="button" name="calc" value="Compute">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <b>Payment Information:</b>
+                </td>
+            </tr>
+            <tr>
+                <td>4)</td>
+                <td>Your monthly payment will be:</td>
+                <td><input type="text" name="payment" size="12"></td>
+            </tr>
+            <tr>
+                <td>5)</td>
+                <td>Your total payment will be:</td>
+                <td><input type="text" name="total" size="12"></td>
+            </tr>
+            <tr>
+                <td>6)</td>
+                <td>Your total interest payments will be:</td>
+                <td><input type="text" name="totalinterest" size="12"></td>
+            </tr>
+        </table>
+    </form>
+<!-- <script src="scripts/index.js" type="module"> </script> -->
+</body>
+
+</html>
