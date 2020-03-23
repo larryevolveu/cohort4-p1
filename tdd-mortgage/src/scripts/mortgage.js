@@ -17,10 +17,25 @@ const mortFunctions = {
         const total = monthly * payments;
         const totalInterest = total - principal;
 
+        //
+        // If we have valid number return them
+        //
+        if(monthly & total) {
+            return { 
+                monthly: mortFunctions.round(monthly), 
+                total: mortFunctions.round(total), 
+                interest: mortFunctions.round(totalInterest)
+            }
+        }
+
+        // 
+        // The numbers must not be valid
+        //
         return { 
-            monthly: mortFunctions.round(monthly), 
-            total: mortFunctions.round(total), 
-            interest: mortFunctions.round(totalInterest)}
+            monthly: '',
+            total: '',
+            interest: '',
+        }
     },
 
     round(num) {

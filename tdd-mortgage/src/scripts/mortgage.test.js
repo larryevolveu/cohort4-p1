@@ -2,11 +2,10 @@
 // npm test -- -t mort
 //
 import mortfunc from './mortgage.js';
-import mortFunctions from './mortgage.js';
 
 test('Test the plumbing', () => {
     console.log("Test the unit test plumbing");
-    mortFunctions.play();
+    mortfunc.play();
 });
 
 test('Test the mortgage calculation', () => {
@@ -24,6 +23,11 @@ test('Test the mortgage calculation', () => {
     expect(result.monthly).toBe(13.22);
     expect(result.total).toBe(1585.81);
     expect(result.interest).toBe(585.81);
+
+    result = mortfunc.calcLoan('', '', '');
+    expect(result.monthly).toBe('');
+    expect(result.total).toBe('');
+    expect(result.interest).toBe('');
 
 });
 
