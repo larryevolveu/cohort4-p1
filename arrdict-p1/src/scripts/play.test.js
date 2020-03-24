@@ -49,13 +49,34 @@ test('Test to learn how dictionaries work.', () => {
     }
 });
 
-
 test('Test the link to play.js.', () => {
     console.log('In link test');
     const retval = pfunc.play(123);
     expect(retval[0]).toBe(123);
     
     expect(pfunc.play(234)[0]).toBe(234);
+});
 
+test('Test more complex data structures.', () => {
+    console.log('complex');
+    const obj1 = {
+        ab:'Alberta', 
+        sk:'Saskatchewan',
+        city: {
+            yyc: "Calgary",
+            yeg: "Edmonton",
+        },
+        arr: [5,6,7],
+    };
+
+    // const city = {
+    //     yyc: "Calgary",
+    //     yeg: "Edmonton",
+    // }
+
+    // obj1["city"] = city;
+
+    console.log(obj1["city"]["yyc"]);
+   
 
 });
