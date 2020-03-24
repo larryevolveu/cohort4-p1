@@ -1,5 +1,3 @@
-
-
 function calcLoan(principal, yearInterest, years) {
 
     return { 
