@@ -28,11 +28,13 @@
 </head>
 
 <body>
+    <h1 id="idH1" todo="change me">Heading one v1</h1>
+    <h1 id="idH2">Heading two</h1>
     <div class="clCard">
         Stuff 1
         <br />
         <button>After</button>
-        <button>Before</button>
+        <button todo="fix me up">Before</button>
     </div>
     <div class="clCard" id="idStuff2">Stuff 2</div>
     <div class="clCard">Stuff 3</div>
@@ -40,6 +42,17 @@
 
     <button id="idButton">Push Me</button>
     <!-- <script src="dom.js" type="module"> </script> -->
+    <script>
+        console.log(idH1)
+        // idH1.addEventListener('click', (e) => {
+        document.body.addEventListener('click', (e) => {
+            console.log(e.target);
+            const todo = e.target.getAttribute("todo");
+            if (todo) {
+                console.log("This is what I could do:", todo);
+            }
+        })
+    </script>
 </body>
 
 </html>

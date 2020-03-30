@@ -1,4 +1,6 @@
+//
 // import domfuncs from './domfunc'
+//
 
 test('Does the dom functions work?', () => {
     const parent = document.createElement('div');
