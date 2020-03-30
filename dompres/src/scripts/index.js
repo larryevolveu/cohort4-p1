@@ -23,3 +23,13 @@ function myEventFunc(e) {
         e.target.textContent = e.target.textContent + ' stuff'
     }
 }
+
+/*
+
+
+        while (idWherePeopleGo.firstChild) {
+            idWherePeopleGo.removeChild(idWherePeopleGo.firstChild);
+        }
+
+
+*/
