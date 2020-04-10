@@ -1,0 +1,26 @@
+{
+    "name": "javascript",
+    "version": "1.0.0",
+    "description": "",
+    "main": "advanced.js",
+    "scripts": {
+        "test": "jest",
+        "testcov": "jest --coverage",
+        "testmod1": "jest src/01-getting-started",
+        "testmod1cov": "jest src/01-getting-started --coverage",
+        "testfile": "jest src/01-getting-started/scripts/lfsplay.test.js",
+        "testdom": "jest dom",
+        "testfetch": "jest fetch"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/cli": "^7.8.4",
+        "@babel/preset-env": "^7.9.0",
+        "jest": "^24.9.0"
+    },
+    "dependencies": {
+        "node-fetch": "^2.6.0",
+        "whatwg-fetch": "^3.0.0"
+    }
+}

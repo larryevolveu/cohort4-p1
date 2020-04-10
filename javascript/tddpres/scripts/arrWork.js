@@ -10,7 +10,7 @@ const functions = {
     },
 
     totalArr(arr) {
-        return arr.reduce((p,v) => p + v, 0);
+        return arr.reduce((p,v) => p + Number(v), 0);
     }
 }
 
