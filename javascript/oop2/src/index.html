@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shapes</title>
+    <style>
+       .clBox {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+            border: solid;
+            padding: 10px;
+        }
+        .clShape {
+            fill: #8d9995;
+            stroke-width: 3;
+            stroke: #2e309b;
+        }
+        .clInput {
+            width: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Hello World V3</h1>
+
+    <button todo="newRectangle">Rectangle</button>
+    <button todo="newSquare">Square</button>
+    <button todo="newCircle">Circle</button>
+    x <input class="clInput" id="idx" type="number" value="1" />
+    y <input class="clInput" id="idy" type="number" value="1" />
+    <button todo="show">Show</button>
+
+    <div id="idDrawings" class="clBox"></div>
+
+    <script src="scripts/index.js" type="module"></script>
+
+</body>
+</html>
