@@ -7,7 +7,7 @@ const arrTest = [
     { key: "erin", fname: "Erin", lname: "Shumlich", comp: "AHS" },
 ];
 
-test('Test plumbing', () => {
+test('Test lookup', () => {
 
     // console.log('Hello World');
     expect(funcs.lookup(arrTest,'lor','fname')).toBe("Lorraine");
@@ -15,4 +15,23 @@ test('Test plumbing', () => {
     expect(funcs.lookup(arrTest,'jes','fname')).toBe("Jessica");
     expect(funcs.lookup(arrTest,'jxxes','fnaxxme')).toBe("");
    
+});
+
+test('Test createCard', () => {
+    const div = funcs.createCard(arrTest[1]);
+    expect(div.nodeName).toBe('DIV');
+    expect(div.getAttribute('key')).toBe(arrTest[1].key);
+});
+
+
+test('Test createPeople', () => {
+
+    const div = document.createElement('div');
+    funcs.createAllCards(div, arrTest);
+    expect(div.children.length).toBe(arrTest.length);
+
+    funcs.createAllCards(div, arrTest);
+    expect(div.children.length).toBe(arrTest.length);
+
+    // expect(div.getAttribute('key')).toBe(arrTest[1].key);
 });
