@@ -28,6 +28,7 @@ class PipeLine {
     insert(length, diameter, quality) {
         this.count++;
         const pipe = new Pipe('p' + this.count, length, diameter, quality);
+        
         if (this.current) { 
 
             pipe.nextPipe = this.current.nextPipe;
