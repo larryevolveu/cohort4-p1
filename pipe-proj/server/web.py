@@ -1,5 +1,5 @@
 import os
-from flask import Flask
+from flask import Flask, jsonify, request
 from flask_cors import CORS
 
 print(__name__)
@@ -16,6 +16,18 @@ def larry():
     val = mySpecial()
     print('*************', val)
     return "Hello World from route larry###### - " + str(val)
+
+@app.route("/list", methods = ['POST','GET'])
+def list():
+    myList = ["PipeLine NE 7", "East of really east", "Center Project"]
+    return jsonify(myList), 200
+
+
+@app.route("/save", methods = ['POST','GET'])
+def save():
+    content = request.get_json()
+    print(content)
+    return jsonify([]), 200
 
 def mySpecial():
     a = 1 + 1 - 2 * 3
