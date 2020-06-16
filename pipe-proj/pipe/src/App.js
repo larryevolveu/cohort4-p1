@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
 
-import NewPipeComp from './components/newpipe.js';
-import CurrentPipeComp from './components/currentpipe.js';
-import ButtonsComp from './components/buttons.js';
+import NewPipeComp from './components/NewPipeComp.js';
+import CurrentPipeComp from './components/CurrentPipeComp.js';
+import ButtonsComp from './components/ButtonsComp.js';
 
 import funcs from './pipebusiness/pipelogic.js';
 
@@ -24,6 +24,8 @@ class App extends React.Component {
     const todo = e.target.getAttribute('todo');
     // console.log('Should do a click thing', this.todo);
     if (todo) {
+      console.log(todo);
+      
       this.setState({ todo: todo });
       if (todo === 'save') {
         console.log("Do Save Stuff");
@@ -36,9 +38,13 @@ class App extends React.Component {
       }
     }
   }
+  
+  getPipeLine = () => {
+    return this.pipeLine;
+  }
 
   render() {
-    console.log("!!! - in App.rendor", this.state.todo);
+    // console.log("!!! - in App.rendor", this.state.todo);
 
     let output = [];
 
@@ -47,14 +53,15 @@ class App extends React.Component {
     } else {
       if (this.pipeLine.get()) {
         output.push(<CurrentPipeComp key="current" pipe={this.pipeLine.get()} />);
+      } else {
+        output.push(<ButtonsComp key="buttons" />);
       }
-      output.push(<ButtonsComp key="buttons" />);
     }
 
 
     return (
       <div onClick={this.onClick} className="App">
-        <h1>Pipe Linked List v02</h1>;
+        <h1>Pipe Linked List v.03</h1>
         {output}
       </div>
     )

@@ -1,11 +1,11 @@
 import React from 'react';
 
 function CurrentPipeComp(props) {
-    console.log(props);
+    // console.log(props);
 
     return (
         <div>
-            <h1>CurrentPipeComp</h1>
+            <h1>Current Pipe</h1>
             <div>
                 ID {props.pipe.id}
             </div>
@@ -19,7 +19,7 @@ function CurrentPipeComp(props) {
                 Quality {props.pipe.quality}
             </div>
             <button todo="prev"> {`<==`}  {props.pipe.prevPipe.id}</button>
-            <button todo="cancel">Return</button>
+            <button todo="new">New</button>
             <button todo="next"> {props.pipe.nextPipe.id} {`==>`}</button>
         </div>
     )

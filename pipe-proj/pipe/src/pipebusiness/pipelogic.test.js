@@ -13,25 +13,6 @@ test('Our Pipe Class', () => {
     expect(pipe.id).toBe('p1');
 });
 
-/*
-
-get ==> null
-insert p1
-get ==> what i inserted
-next ==> same
-next ==> same
-prev ==> same
-prev ==> same
-
-insert p2
-get ==> get p2
-next ==> get p1
-next ==> p2
-next ==> p1
-prev ==> p2
-prev ==> p1
-
-*/
 test('Our PipeLine Class', () => {
     const pipeLine = new funcs.PipeLine();
     expect(pipeLine.get()).toBeNull();
@@ -64,4 +45,32 @@ test('Our PipeLine Class', () => {
     expect(pipeLine.next().id).toBe('p3');
     expect(pipeLine.next().id).toBe('p1');
 
+});
+
+
+test('Our PipeLine Class save and load', () => {
+    const pipeLine = new funcs.PipeLine();
+    const startKey = pipeLine.insert(1, 1, 'a');
+    pipeLine.insert(2, 2, 'b');
+    pipeLine.insert(3, 3, 'c');
+    pipeLine.prev();
+    pipeLine.insert(2.2, 2.2, 'b.1');
+    
+    pipeLine.find(startKey);
+
+    expect(pipeLine.get().id).toBe('p1');
+    expect(pipeLine.get().quality).toBe('a');
+
+    const jsonValue = pipeLine.toJSON();
+    // console.log(jsonValue);
+    
+    const pl2 = new funcs.PipeLine();
+    pl2.loadFromJSON(jsonValue);
+    pl2.find(startKey);
+    expect(pl2.get().id).toBe('p1');
+    expect(pl2.get().quality).toBe('a');
+    expect(pl2.next().quality).toBe('b');
+    expect(pl2.next().quality).toBe('b.1');
+    expect(pl2.next().quality).toBe('c');
+    expect(pl2.next().quality).toBe('a');
 });
