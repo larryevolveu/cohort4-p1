@@ -4,6 +4,7 @@ import './App.css';
 import NewPipeComp from './components/NewPipeComp.js';
 import CurrentPipeComp from './components/CurrentPipeComp.js';
 import ButtonsComp from './components/ButtonsComp.js';
+import ProjectComp from './components/ProjectComp';
 
 import funcs from './pipebusiness/pipelogic.js';
 
@@ -15,7 +16,7 @@ class App extends React.Component {
   }
 
   onSavePipe = (l, w, q) => {
-    console.log(l, w, q);
+    // console.log(l, w, q);
     this.pipeLine.insert(l, w, q);
     this.setState({ todo: null });
   }
@@ -24,7 +25,7 @@ class App extends React.Component {
     const todo = e.target.getAttribute('todo');
     // console.log('Should do a click thing', this.todo);
     if (todo) {
-      console.log(todo);
+      // console.log(todo);
       
       this.setState({ todo: todo });
       if (todo === 'save') {
@@ -63,6 +64,7 @@ class App extends React.Component {
       <div onClick={this.onClick} className="App">
         <h1>Pipe Linked List v.03</h1>
         {output}
+        <ProjectComp/>
       </div>
     )
   }

@@ -2,7 +2,7 @@
 import funcs from './pipelogic.js';
 
 
-test('Our Pipe Logic', () => {
+test('Our Plumbing', () => {
     console.log("Hello World!", funcs);
     console.log(funcs.functions.hello());
 });
