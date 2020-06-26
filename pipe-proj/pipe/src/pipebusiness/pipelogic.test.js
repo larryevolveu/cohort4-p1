@@ -1,10 +1,11 @@
 
+// 
+
 import funcs from './pipelogic.js';
 
-
 test('Our Plumbing', () => {
-    console.log("Hello World!", funcs);
-    console.log(funcs.functions.hello());
+    // console.log("Hello World!", funcs);
+    // console.log(funcs.functions.hello());
 });
 
 test('Our Pipe Class', () => {
@@ -68,9 +69,20 @@ test('Our PipeLine Class save and load', () => {
     pl2.loadFromJSON(jsonValue);
     pl2.find(startKey);
     expect(pl2.get().id).toBe('p1');
-    expect(pl2.get().quality).toBe('a');
-    expect(pl2.next().quality).toBe('b');
-    expect(pl2.next().quality).toBe('b.1');
-    expect(pl2.next().quality).toBe('c');
-    expect(pl2.next().quality).toBe('a');
+    expect(pl2.next().id).toBe('p2');
+    expect(pl2.next().id).toBe('p4');
+    expect(pl2.next().id).toBe('p3');
+    expect(pl2.next().id).toBe('p1');
+    let id = pl2.insert(20, 36, 'good');
+    
+    expect(pl2.get().id).toBe('p5');
+});
+
+
+
+test('Play and test stuff', () => {
+    const s = "p123";
+    const n = parseInt(s.substring(1));
+    
+    // console.log(s, n);
 });

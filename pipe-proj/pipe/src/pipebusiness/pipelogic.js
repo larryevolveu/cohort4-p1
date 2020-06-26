@@ -56,12 +56,9 @@ class PipeLine {
             return false;
         }
         const startid = this.current.id;
-        // console.log(this.current.id);
         
         while (this.current.id !== id) {
             this.next();
-            // console.log(this.current.id);
-            // we didn't find it
             if (startid === this.current.id) {
                 return false;
             }
@@ -97,9 +94,12 @@ class PipeLine {
     */
     loadFromJSON(s) {
         const obj = JSON.parse(s);
+        let count = 0;
 
         // create a pipe object of each pojo object
         for (let id in obj) {
+            const n = parseInt(id.substring(1));
+            if (n > count) { count = n}
             const p = obj[id];
             const pipe = new Pipe(p.id, p.length, p.diameter, p.quality);
             p.pipe = pipe;
@@ -108,16 +108,13 @@ class PipeLine {
         // link each object to the next and prev oject
         for (let id in obj) {
             const p = obj[id];
-            // console.log(p);
             p.pipe.nextPipe = obj[p.nextid].pipe;
             p.pipe.prevPipe = obj[p.previd].pipe;
-            // console.log(p.pipe.id, p.pipe.prevPipe.id, p.pipe.nextPipe.id);
         }
 
         const keys = Object.keys(obj);
-        // console.log(keys[0]);
         this.current = obj[keys[0]].pipe;
-
+        this.count = count;
     }
 
 

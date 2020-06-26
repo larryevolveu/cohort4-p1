@@ -37,3 +37,4 @@ __pycache__
 javascript/github/repositories.js
 javascript/github/pictures
 .vscode
+pipeline.db*

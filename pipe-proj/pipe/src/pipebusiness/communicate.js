@@ -1,4 +1,20 @@
 
+const url = 'http://localhost:5000/';
+
+async function getProjects() {
+    const data = await postData(url + 'list');
+    return data;
+}
+
+async function saveProject(id, name, data) {
+    return await postData(url + 'save', {id:id, name:name, data:data});
+}
+
+async function loadProject(id) {
+    const data = await postData(url + 'load', {id:id});
+    return data.data;
+}
+
 async function postData(url = '', data = {}) {
     // Default options are marked with *
     const response = await fetch(url, {
@@ -18,8 +34,7 @@ async function postData(url = '', data = {}) {
     const json = await response.json();    // parses JSON response into native JavaScript objects
     json.status = response.status;
     json.statusText = response.statusText;
-    // console.log(json, typeof(json));
     return json;
 }
 
-export default postData;
+export default {postData, getProjects, saveProject, loadProject};

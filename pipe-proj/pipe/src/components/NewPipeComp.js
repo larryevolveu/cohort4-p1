@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 function NewPipeComp(props) {
-    // console.log(props);
 
     const [msg, setMsg] = useState("");
     
@@ -10,7 +9,6 @@ function NewPipeComp(props) {
     }
 
     function mySave() {
-        // console.log("In My Save");
         const pipeLength = get("idLength");
         const diameter = get("idDiameter");
         const quality = get("idQuality");
@@ -20,12 +18,10 @@ function NewPipeComp(props) {
             return;
         }
 
-        // console.log(pipeLength, diameter, quality);
-        // console.log(props);
         props.onSave(pipeLength, diameter, quality);
 
-
     }
+    
     return (
         <div>
             <h1>NewPipeComp</h1>
