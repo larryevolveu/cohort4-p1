@@ -85,7 +85,7 @@ class App extends React.Component {
     }
 
     return (
-      <div onClick={this.onClick} className="App">
+      <div onClick={this.onClick} className="App clBox">
         <h1>Pipe Linked List v.05</h1>
         {output}
       </div>

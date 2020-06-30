@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 function NewPipeComp(props) {
 
     const [msg, setMsg] = useState("");
-    
-    function get (id) {
+
+    function get(id) {
         return document.getElementById(id).value;
     }
 
@@ -12,7 +12,7 @@ function NewPipeComp(props) {
         const pipeLength = get("idLength");
         const diameter = get("idDiameter");
         const quality = get("idQuality");
-       
+
         if (!pipeLength) {
             setMsg('You must enter a length');
             return;
@@ -21,19 +21,22 @@ function NewPipeComp(props) {
         props.onSave(pipeLength, diameter, quality);
 
     }
-    
+
     return (
-        <div>
+        <div className="clInnerBox">
             <h1>NewPipeComp</h1>
             {msg}
             <div>
-                Length <input id="idLength"></input>
+                <label>Length </label>
+                <input id="idLength"></input>
             </div>
             <div>
-                Diameter <input id="idDiameter"></input>
+                <label>Diameter </label>
+                <input id="idDiameter"></input>
             </div>
             <div>
-                Quality <input id="idQuality"></input>
+                <label>Quality </label>
+                <input id="idQuality"></input>
             </div>
             <button onClick={mySave} >Save</button>
             <button todo="cancel">Cancel</button>

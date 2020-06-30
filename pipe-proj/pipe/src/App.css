@@ -1,42 +1,82 @@
 .App {
   text-align: center;
+  font-family: helvetica;
 }
 
-.clButton {
-  margin: 1em;
+.clBox {
+  /* background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%); */
+  /* background: linear-gradient(#43C6AC, #F8FFAE); */
+  background: white;
+  border: solid;
+  width: 80%;
+  min-height: 100px;
+  margin: auto;
+  margin-top: 5vw;
+  text-align: center;
+  padding: 30px;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 10px 10px 15px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.clInnerBox {
+  width: 80%;
+  margin: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+input, textarea, select {
+  width: 150px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+button {
+  margin: .5em;
 }
 
-.App-link {
-  color: #61dafb;
+input, select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+label {
+  font-weight: bold;
+}
+
+.clListItem {
+  font-weight: bold;
+  margin: 8px;
+}
+
+.clListItem:hover {
+  transform: scale(1.20);
+  /* color: rgba(204, 226, 212, 0.972); */
+}
+
+.clPanel-2 {
+  /* border: 1px solid #000; */
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.clItem-1 {
+  /* border: 1px solid #000; */
+  grid-column: 1;
+  text-align: right;
+  font-weight: bold;
+}
+
+.clItem-2 {
+  /* border: 1px solid #000; */
+  grid-column: 2;
+  align-content: start;
+  text-align: left;
+  font-weight: bold;
 }

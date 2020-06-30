@@ -1,4 +1,9 @@
-
+#
+# To run the tests from the server directory do the following:
+#
+# windows ==> python -m pytest . -s -k hello
+# linux / mac ==> PYTHONPATH=. pytest -k yourname -s
+# (BIG NOTE: Test tests are distructive and will delete the data)
 import persist.sql as persist
 
 name1 = "db pipe 1"
@@ -58,7 +63,11 @@ CREATE TABLE "projects" (
 	"data"	TEXT
 );
 """
-    persist.sql_util("drop table projects;",[])
+    try:
+        persist.sql_util("drop table projects;",[])
+    except:
+        print("Table does not exist to delete, but we don't care.")
+
     persist.sql_util(
         create_table,
         []

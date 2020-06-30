@@ -20,14 +20,15 @@ function ProjectLoadComp(props) {
     }, []);
 
     const plsToDisplay = pls.map((p, i) => {
-        return <div key={i} id={p[0]} todo="load"> {p[1]} </div>;
+        return <div key={i} id={p[0]} className="clListItem" todo="load"> {p[1]} </div>;
     })
 
     return (
-        <div>
+        <div className="clList">
             <h1>Load a Project</h1>
             {msg}
             {plsToDisplay}
+            <br/>
             <button className="clButton" todo="cancel">Cancel</button>
 
         </div>
